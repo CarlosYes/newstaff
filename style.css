@@ -23,7 +23,7 @@ body {
 .cards-track {
 	display: flex;
 	gap: 2rem;
-	animation: scroll-horizontal 80s linear infinite;
+	animation: scroll-horizontal 90s linear infinite;
 	width: max-content;
 }
 
