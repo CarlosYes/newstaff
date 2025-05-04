@@ -1,0 +1,283 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+body {
+	background: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.carousel {
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	padding: 4rem;
+	/* 	max-width: 90vw; */
+}
+.cards-track {
+	display: flex;
+	gap: 2rem;
+	animation: scroll-horizontal 120s linear infinite;
+	width: max-content;
+}
+
+@keyframes scroll-horizontal {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+.card {
+	flex: 0 0 auto;
+	position: relative;
+	width: 350px;
+	height: 190px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background: #333;
+	display: flex;
+	transition: 0.5s;
+}
+.card:hover {
+	height: 450px;
+}
+.card .lines {
+	position: absolute;
+	inset: 0;
+	background: #000;
+	overflow: hidden;
+}
+.card .lines::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	height: 120px;
+	background: linear-gradient(
+		transparent,
+		#45f3ff,
+		#45f3ff,
+		#45f3ff,
+		transparent
+	);
+	animation: animate 4s linear infinite;
+}
+@keyframes animate {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+.card .lines::after {
+	content: "";
+	position: absolute;
+	inset: 3px;
+	background: #292929;
+}
+.card .imgBx {
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 150px;
+	height: 150px;
+	background: #000;
+	transition: 0.5s;
+	z-index: 10;
+	overflow: hidden;
+}
+.card:hover .imgBx {
+	width: 250px;
+	height: 250px;
+}
+.card .imgBx::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 150px;
+	transform: translate(-50%, -50%);
+	background: linear-gradient(
+		transparent,
+		#e70b51,
+		#e72562,
+		#ff3c7b,
+		transparent
+	);
+	animation: animate1 6s linear infinite;
+}
+@keyframes animate1 {
+	0% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+}
+.card .imgBx img {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1;
+	width: calc(100% - 20px);
+	height: calc(100% - 20px);
+	/* filter: grayscale(1); */
+}
+.card .content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	overflow: hidden;
+}
+.card .content .details {
+	padding: 40px;
+	text-align: center;
+	width: 100%;
+	transition: 0.5s;
+	transform: translateY(145px);
+}
+
+.card .content .details h2 {
+	font-size: 1.25em;
+	font-weight: 600;
+	color: #12d2dc;
+	line-height: 1.2em;
+}
+.card .content .details h2 span {
+	font-size: 0.75em;
+	font-weight: 500;
+	color: #fff;
+}
+.card .content .details .data {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 0;
+}
+.card .content .details .data h3 {
+	font-size: 1em;
+	font-weight: 600;
+	color: #12d2dc;
+	line-height: 1.2em;
+}
+.card .content .details .data h3 span {
+	font-size: 0.85em;
+	font-weight: 400;
+	color: #fff;
+}
+.card .content .details .actionBtn {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+.card .content .details .actionBtn button {
+	padding: 10px 30px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	font-size: 1em;
+	font-weight: 500;
+	background: #45f3ff;
+	color: #222;
+	cursor: pointer;
+}
+.wiztext {
+	color: #FFFF00;
+	margin-top: 5%;
+	font-family: 'TinWoodman';
+	font-size: 3vw;
+	opacity: 0.45;
+	text-align: left;
+	letter-spacing: 10px;
+	position: fixed;
+	width: 200%;
+	min-width: 26000px;
+	z-index: 99000;
+	display: inline-block;
+	  text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%), 0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%), 0 5px 0 hsl(174, 5%, 64%), 0 6px 0 hsl(174, 5%, 62%), 0 7px 0 hsl(174, 5%, 61%), 0 8px 0 hsl(174, 5%, 60%), 0 0 5px rgba(0, 0, 0, .05), 0 1px 3px rgba(0, 0, 0, .2), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .3);
+
+	animation: whiz 20s infinite linear;
+	-webkit-animation: whiz 60s infinite linear;
+}
+
+
+
+.animated {
+	visibility: visible !important;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-duration: 3s;
+	animation-duration: 3s;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+}
+
+
+
+
+ @keyframes whiz {
+ 0% {
+ left: 250%;
+}
+ 100% {
+ left: -250%;
+}
+}
+@-webkit-keyframes whiz {
+ 0% {
+ left: 250%;
+}
+ 100% {
+ left: -250%;
+}
+}
+.x {
+	-webkit-animation: x 20s linear infinite alternate;
+	animation: x 20s linear infinite alternate;
+}
+.y {
+	-webkit-animation: y 10s linear infinite alternate;
+	animation: y 10s linear infinite alternate;
+}
+ @-webkit-keyframes x {
+ 100% {
+ -webkit-transform: translateX(calc(100vw - 3000px));
+ transform: translateX(calc(100vw - 3000px));
+}
+}
+ @keyframes x {
+ 100% {
+ -webkit-transform: translateX(calc(1000vw - 3000px));
+ transform: translateX(calc(1000vw - 3000px));
+}
+}
+@-webkit-keyframes y {
+ 100% {
+ -webkit-transform: translateY(calc(1000vh - 3000px));
+ transform: translateY(calc(100vh - 3000px));
+}
+}
+@keyframes y {
+ 100% {
+ -webkit-transform: translateY(calc(1000vh - 3000px));
+ transform: translateY(calc(1000vh - 3000px));
+}
+.card .content .details .actionBtn button:nth-child(2) {
+	background: #fff;
+}
