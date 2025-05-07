@@ -248,11 +248,11 @@ body {
 }
 }
 .x {
-	-webkit-animation: x 20s linear infinite alternate;
+	-webkit-animation: x 40s linear infinite alternate;
 	animation: x 20s linear infinite alternate;
 }
 .y {
-	-webkit-animation: y 10s linear infinite alternate;
+	-webkit-animation: y 30s linear infinite alternate;
 	animation: y 10s linear infinite alternate;
 }
  @-webkit-keyframes x {
